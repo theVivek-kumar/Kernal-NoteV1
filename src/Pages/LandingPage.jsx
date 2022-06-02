@@ -16,7 +16,7 @@ function LandingPage() {
         <a className='have-account' href='#'>Already have a Account</a>
     </div>
     <div>
-                    <img className='landing-page-image'                src={image} />
+                    <img className='landing-page-image'src={image} />
                 </div>
                 </div>
         </>
