@@ -1,51 +1,50 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{margin: 0;padding: 0; box-sizing: border-box;}
+:root{
+  font-family: monospace;
+  font-size: 1.1rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.landing-page-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  height: auto;
 }
-
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
+.landing-wrapper{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
   margin: 1rem;
+  flex-wrap: wrap;
+  width: auto;
+  margin: 2rem;
+  padding:2rem;
+}
+.landingpage-header{
+  font-size: 2.5rem;
+}
+.pera-1{
+  font-size: 1.2rem;
+  color: rgb(33, 33, 33);
+  padding-top:1rem;
+}
+.heading-2{
+  font-size: 1.5rem;
+  padding-top: 8rem;
+}
+.heading-2-color{
+font-size: 1.5rem;
+color: blue;
+}
+.have-account{
+  font-size: 1.2rem;
+  color: blue;
+  padding-top: 1.5rem;
+  text-decoration: none;
+}
+.landing-page-image{
+  width: 100%;
+  height: auto;
+  min-width: 10rem;
+  overflow: hidden;
 }
