@@ -12,11 +12,11 @@ function LandingPage() {
         <div className='heading-2'>Meet your Persnal</div>
         <div className='heading-2-color'>Note taking App</div>
         <p className='pera-1' >Manage your daily tasks and workflow in a modern way and boost your efficiency without any efforts.</p>
-       <Button sx={{width:"10rem", margin:"8rem 0 0"}} variant='contained' >join now</Button>
+        <Button sx={{width:"12rem", margin:"8rem 0 0"}} variant='contained' >join now</Button>
         <a className='have-account' href='#'>Already have a Account</a>
     </div>
     <div>
-                    <img className='landing-page-image'src={image} />
+                <img className='landing-page-image'src={image} />
                 </div>
                 </div>
         </>
