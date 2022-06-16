@@ -8,7 +8,7 @@ function MainPage() {
       <>
         <NavBar/>
         <AsideBar />
-        <LandingPage/>
+       
         </>
   )
 }
