@@ -6,12 +6,12 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
- const AsideBar = () => {
-     return (
+const AsideBar = () => {
+    return (
           <Stack display='block' spacing={4}>
-         <Container>
+        <Container>
             
-     <Box sx={{ width: '100%', maxWidth: 180, bgcolor: 'background.paper'  }}>
+    <Box sx={{ width: '100%', maxWidth: 180, bgcolor: 'background.paper'  }}>
           <nav aria-label="main mailbox folders">
             
               <List >
@@ -58,11 +58,10 @@ import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
         </List>
       </nav>
           {/* <Divider /> */}
-         <Button variant="contained" >Create New Note</Button>
-                 </Box>
-                 
-             </Container>
-         </Stack>
+        <Button variant="contained" >Create New Note</Button>
+                </Box>
+            </Container>
+        </Stack>
   )
 }
 export default AsideBar
