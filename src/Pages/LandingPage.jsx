@@ -2,6 +2,7 @@ import React from 'react';
 import image from '../asset/undraw_Ideas_flow_re_bmea (1).png';
 import {Button} from '@mui/material'
 import { NavLink } from 'react-router-dom';
+import { red } from '@mui/material/colors';
 function LandingPage() {
     return (
         <>
