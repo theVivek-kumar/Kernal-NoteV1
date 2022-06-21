@@ -2,7 +2,14 @@ import React from 'react'
 
 function ModelNote() {
   return (
-    <div>ModelNote</div>
+      <div>
+          <div className='model-container-area'>
+              <div>Title</div>
+              <div></div>
+
+              
+          </div>
+    </div>
   )
 }
 
