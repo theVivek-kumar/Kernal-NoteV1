@@ -1,5 +1,6 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
+import RichTextEditor from './RichTextEditor';
 
 
 function ModelNote() {
@@ -9,7 +10,26 @@ function ModelNote() {
           <div className='model-container-area'>
               <div>Title</div>
           <div><AiOutlineClose /></div>
-          <input type={text}/>
+          <input placeholder='add your note here' />
+          <div>lable</div>
+          <div className='lable-flow-flex'>
+          <input type="radio" />
+          <p className="label">Office</p>
+          <input type="radio" />
+          <p className="label">Home</p>
+          <input type="radio" />
+          <p className="label">School</p>
+          </div>
+          <div>priority</div>
+          <div className='lable-flow-flex'>
+          <input type="radio" />
+          <p className="label">High</p>
+          <input type="radio" />
+          <p className="label">Medium</p>
+          <input type="radio" />
+          <p className="label">Low</p>
+          </div>
+          <RichTextEditor/>
           
 
               
