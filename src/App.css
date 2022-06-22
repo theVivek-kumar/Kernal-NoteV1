@@ -5,6 +5,7 @@
   font-family: monospace;
   font-size: 1rem;
   --Blue-clr:#1976d3;
+  --Box-shadow:#d3d4d5
 }
 .landing-page-container{
   display: grid;
@@ -15,7 +16,7 @@
   margin-top: 2rem;
   grid-template-columns: 40% 60%;
   background-color: white;
-  box-shadow: 0px 0px 15px #d3d4d5;
+  box-shadow: 0px 0px 15px var(--Box-shadow);
   border-radius: 1rem;
   place-items: center;
  
@@ -64,4 +65,51 @@ font-weight: 500;
 }
 .lable-flow-flex{
   display: flex;
+  padding: .4rem;
+  justify-content: flex-start;
+  gap: .4rem;
+  align-items: center;
+
+
+}
+/*model csss*/
+.model-container-area-bg{
+  background-color: white;
+  box-shadow: 0px 0px 15px  var(--Box-shadow) ;
+  width: 25%;
+  height: auto;
+}
+.title-container{
+  display: flex;
+  justify-content: space-between;
+  padding: .4rem;
+  font-weight: 500;
+
+}
+.input-field-area{
+  border: none;
+  border-bottom: 2px solid var(--Blue-clr);
+  width: 70%;
+  height: 2rem;
+  padding: .4rem;
+}
+
+.model-container{
+  margin: 1rem;
+}
+.model-btn-addnote{
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+}
+.btn-add{
+  background-color: var(--Blue-clr);
+  border: none;
+  padding: .6rem;
+  color: white;
+  border-radius: 3px;
+  box-shadow: var(--Box-shadow);
+  margin-bottom: 1rem;
+  
+
 }
