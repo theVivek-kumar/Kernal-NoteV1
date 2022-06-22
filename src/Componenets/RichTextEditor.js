@@ -1,9 +1,10 @@
 import React from 'react';
-// import RichTextEditor from 'react-rte';
-import JoditEditor from 'jodit-react';
+import ReactQuill from 'react-quill'; 
+//  import * as ReactQuill from 'react-quill';
+
 function RichTextEditor() {
   return (
-    <div><JoditEditor/></div>
+    <div><ReactQuill/></div>
   )
 }
 
