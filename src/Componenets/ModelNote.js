@@ -35,7 +35,7 @@ function ModelNote() {
             <p className="label">Low</p>
             </div>
             <div className='model-btn-addnote'>
-            <button className='btn-add'>ADD Note</button>
+            <button className='btn-add'>ADD NOTE</button>
             </div>
           
 
