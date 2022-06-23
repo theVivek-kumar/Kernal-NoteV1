@@ -5,13 +5,15 @@ import CardComp from '../Componenets/Card-Comp'
 import ModelNote from '../Componenets/ModelNote'
 import NavBar from '../Componenets/Navbar'
 import SearchAppBar from '../Componenets/Search'
+import SignIn from '../Componenets/signin/SignIn'
 function MainPage() {
     return (
       <>
         <NavBar />
         <AsideBar />
         <ModelNote />
-        <CardComp/>
+        <CardComp />
+        <SignIn/>
         </>
   )
 }
