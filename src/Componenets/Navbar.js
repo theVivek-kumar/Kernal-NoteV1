@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import {AppBar,Stack, Toolbar,Typography,Button,Box,IconButton,Container} from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -22,7 +23,9 @@ const NavBar = () => {
                         </Typography>
                         <Stack direction='row' spacing={2}>
                         <IconButton><AccountCircleIcon color='inherit' /></IconButton>
-                            <Button variant='contained' color="primary">Login</Button>
+                            <NavLink to ='/LogIn'>
+                              <Button variant='contained' color="primary">Login</Button>
+                            </NavLink>
                             </Stack>
                           </Toolbar>
                       </Container>

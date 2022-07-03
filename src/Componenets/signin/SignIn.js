@@ -1,7 +1,7 @@
 import React from 'react';
 import {FcBusinessman} from "react-icons/fc";
 import { NavLink } from 'react-router-dom';
- 
+import { Signin } from '../../Componenets/signin/SignIn.css';
 import { useAuthContext } from '../../Context/AuthContext'
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 const SignIn = () => {
@@ -9,11 +9,11 @@ const SignIn = () => {
 const location = useLocation();
 
 const encodedToken = localStorage.getItem("token");
-// const {
-//     authState: { firstName, lastName, email, password, confirmPassword },
-//     authDispatch,
-//     signUp,
-// } = useAuthContext();
+const {
+    authState: { firstName, lastName, email, password, confirmPassword },
+    authDispatch,
+    signUp,
+} = useAuthContext();
     return (
         <>
             <div className="container-login">
