@@ -7,7 +7,9 @@ import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import SearchAppBar from './Search';
+import { useNoteContext } from '../Context/NoteContext';
 const AsideBar = () => {
+   const { noteDispatch, labelArray } = useNoteContext();
     return ( <Container  >
           <Stack display='block' spacing={4}>
        
