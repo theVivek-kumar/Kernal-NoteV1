@@ -1,4 +1,6 @@
 import React from 'react'
+import { useState, useEffect } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { List,Stack, ListItem, Box,Button,Container, ListItemButton, ListItemText ,Divider } from '@mui/material'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
@@ -7,6 +9,7 @@ import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import SearchAppBar from './Search';
+import ModelNote from '.././Componenets/ModelNote'
 import { useNoteContext } from '../Context/NoteContext';
 const AsideBar = () => {
    const { noteDispatch, labelArray } = useNoteContext();
@@ -61,10 +64,12 @@ const AsideBar = () => {
         </List>
       </nav>
           {/* <Divider /> */}
-        <Button variant="contained" >Create New Note</Button>
-                </Box>
+        <Button  onClick={() => noteDispatch({ type: "NOTE_MODAL", payload: true })} variant="contained" >Create New Note</Button>
+                
+        </Box>
             
       </Stack>
+      <ModelNote/>
       <SearchAppBar/>
     </Container>
   )

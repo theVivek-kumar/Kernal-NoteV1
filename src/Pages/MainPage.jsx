@@ -11,8 +11,7 @@ function MainPage() {
       <>
         <NavBar />
         <AsideBar />
-        <ModelNote />
-        <CardComp />
+      
       
         </>
   )

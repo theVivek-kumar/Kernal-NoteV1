@@ -1,17 +1,57 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
+import {MdClose} from "react-icons/md";
 import RichTextEditor from './RichTextEditor';
+import { useNoteContext } from '../Context/NoteContext';
 
 
 function ModelNote() {
+    let {
+    noteState,
+    noteDispatch,
+    title,
+    priority,
+    textareaValue,
+    label,
+    addNote,
+    editNote,
+    notesBgColor,
+    noteModal,
+    isEdit,
+  } = useNoteContext();
   return (
     <>
+      
+      <div
+        style={{ display: noteModal ? "block" : "none" }}
+      onClick={() => {
+        noteDispatch({ type: "NOTE_MODAL", payload: false });
+        noteDispatch({ type: "CLEAR_INPUT" });
+        noteDispatch({ type: "IS_EDIT", payload: false });
+      }}
+      defaultValue="#FFFF"
+      className="modal--container"
+      >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        id="myModal"
+        className="modal"
+        style={{ backgroundColor: notesBgColor }}
+      ></div>
+      <form onSubmit={isEdit ? editNote : addNote}>
+          <div className="modal-content">
       <div>
         <div className='model-container-area-bg'>
           <div className='model-container'>
               <div className='title-container'>
               <div>Title</div>
-          <div><AiOutlineClose /></div></div>
+                    <div><AiOutlineClose
+                    onClick={() => {
+                noteDispatch({ type: "NOTE_MODAL", payload: false });
+                noteDispatch({ type: "CLEAR_INPUT" });
+                noteDispatch({ type: "IS_EDIT", payload: false });
+              }}
+              className="close"></AiOutlineClose></div></div>
           
           <input className='input-field-area' placeholder='add your note here' />
           <div className='title-container'>lable</div>
@@ -42,7 +82,11 @@ function ModelNote() {
               
           </div>
         </div>
+        </div>
+          </div>
+        </form>
       </div>
+      
     </>
   )
 }
