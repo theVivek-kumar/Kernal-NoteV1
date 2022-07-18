@@ -1,14 +1,18 @@
+// import Search from '@mui/icons-material/Search'
+
 import React from 'react'
 import AsideBar from '../Componenets/AsideBar'
+import CardComp from '../Componenets/Card-Comp'
+import ModelNote from '../Componenets/ModelNote'
 import NavBar from '../Componenets/Navbar'
-import LandingPage from './LandingPage'
 
 function MainPage() {
     return (
       <>
-        <NavBar/>
+        <NavBar />
         <AsideBar />
-        <LandingPage/>
+      
+      
         </>
   )
 }

@@ -1,0 +1,123 @@
+:root {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        --main-heading: rgb(32, 32, 32);
+        --BACKGROUND-color: #f39494;
+        --PRIMERY-color: rgb(12, 109, 165);
+        --SECONDERY-color: rgb(255, 196, 1);
+        --FOOTER-color: #202020;
+        --red-icon-color:red;
+        --white-text-color:white;
+        --WHITE-DULL:#ece9f2;
+        --WHITE: #ffffff;
+        --GRAY-80: #333333;
+        --GREY-60: #929191;
+        --GRAY-40: #8f8e8e;
+        --GRAY-50: #7e7a7a;
+        --GRAY-20: #C4C4C4;
+        
+}
+.login-container-FP {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 10%;
+    box-shadow: 0px 0px 15px  var(--Box-shadow) ;
+    height: 20rem;
+    padding: 1rem;
+    background-color: var(--white-text-color);
+    height: auto;
+
+
+}
+.label {
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+}
+
+.input-check-btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--FOOTER-color);
+
+}
+
+.Login-input {
+    background-color: var(--PRIMERY-color);
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #e7e7e7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.login-Fp-header {
+    font-size: 5rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border:2px solid #202020;
+    color:var(--FOOTER-color);
+}
+.input-lg {
+    border: none;
+    padding: .5rem;
+    align-items: center;
+    display: flex;
+    width: 80%;
+    font-size: 1.3rem;
+    border: 2px solid var(--PRIMERY-color);
+    margin-top: .2rem;
+    border-radius: 4px;
+
+}
+.input-checkbox{
+display: flex;
+width: auto;
+}
+
+.login-create-acc {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    color: rgb(0, 128, 255);
+}
+
+.container-login {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lable{
+    display: flex;
+    padding: 3px;
+    font-weight: 500;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    font-size: 1.3rem;
+
+
+}
+.create-new-acc{
+color: var(--FOOTER-color)!important;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
