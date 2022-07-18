@@ -73,18 +73,26 @@ font-weight: 500;
 
 }
 /*model csss*/
-.model-container-area-bg{
+.modal--container{
+  -webkit-backdrop-filter: brightness(0.7);
+  backdrop-filter: brightness(0.7);
   background-color: white;
   box-shadow: 0px 0px 15px  var(--Box-shadow) ;
   width: 25%;
+  position: fixed;
+  width: 30%;
   height: auto;
+  top: 50%;
+  left: 50%;
+  margin: 4rem;
+  transform: translate(-50%, -50%);
 }
+
 .title-container{
   display: flex;
   justify-content: space-between;
   padding: .4rem;
   font-weight: 500;
-
 }
 .input-field-area{
   border: none;
@@ -93,7 +101,6 @@ font-weight: 500;
   height: 2rem;
   padding: .4rem;
 }
-
 .model-container{
   margin: 1rem;
 }
