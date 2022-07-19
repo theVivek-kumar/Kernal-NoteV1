@@ -19,7 +19,6 @@
   box-shadow: 0px 0px 15px var(--Box-shadow);
   border-radius: 1rem;
   place-items: center;
- 
 }
 .landing-wrapper{
   display: flex;
