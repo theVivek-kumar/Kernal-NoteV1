@@ -4,6 +4,8 @@ import  MainPage  from "./Pages/MainPage";
 import LandingPage from "./Pages/LandingPage";
 import Login from "./Pages/Login";
 import SignInj from "./Pages/SignIn";
+import Mockman from 'mockman-js';
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
         <Route path="/mainPage" element={<MainPage />} />
         <Route path="/SignIn" element={<SignInj />} />
         <Route path="/LogIn" element={<Login />} />
+        <Route path="/mockman" element={<Mockman />} />
         </Routes>
     </div>
   );

@@ -1,46 +1,45 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
+import { useNoteContext } from '../Context/NoteContext';
 
-const RichTextEditor = () => {
+const RichTextEditor = ({ textAreaValue }) => {
+    const { noteState, noteDispatch } = useNoteContext();
+    //const { textAreaValue } = noteState;
 
-    const [show, setShow] = useState('')
 
     return (
         <>
             <div>
                 <ReactQuill className="shadow-sm"
-                            theme="snow"
-                            style={{
-                                height: 350,
-                                marginTop: '1rem',
-                                display: 'flex',
-                                flexDirection: 'column'
-                            }}
+                    theme="snow"
+                    style={{
+                        height: 350,
+                        marginTop: '1rem',
+                        display: 'flex',
+                        flexDirection: 'column'
+                    }}
 
-                            value={show}
+                    value={textAreaValue || ''}
 
-                            modules={{
-                                toolbar: [
-                                    [{ 'header': '1'}, {'header': '2'}, { 'font': [] }], [{size: []}],
-                                    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-                                    [{'align': []}],
-                                    [{ 'color': [] }, { 'background': [] }],
-                                    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-                                    ['link', "video","image", "code-block"],
-                                    ['clean']
-                                ],
-                            }}
-                            formats={[
-                                'header', 'font', 'size',
-                                'bold', 'italic', 'underline', 'strike', 'blockquote', 'color', 'background',
-                                'list', 'bullet', 'indent', 'link', 'video', 'image', "code-block", "align"
-                            ]}
-                            onChange={(val) => {
-                                setShow(val)
-                            }}
+                    modules={{
+                        toolbar: [
+                            ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                            [{ 'align': [] }],
+                            [{ 'color': [] }, { 'background': [] }],
+                            [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '+1' }],
+                            ['link', "video", "image"],
+                            ['clean']
+                        ],
+                    }}
+
+                    onChange={(event) => noteDispatch({
+                        type: "TEXTAREA",
+                        payload: event,
+                    })
+                    }
                 />
-          </div>
+            </div>
         </>
     );
 };
