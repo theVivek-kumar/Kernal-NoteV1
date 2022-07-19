@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
-import {MdClose,MdOutlineColorLens} from "react-icons/md";
+import {MdOutlineColorLens} from "react-icons/md";
 import RichTextEditor from './RichTextEditor';
 import { useNoteContext } from '../Context/NoteContext';
 
@@ -29,7 +29,7 @@ function ModelNote() {
         noteDispatch({ type: "CLEAR_INPUT" });
         noteDispatch({ type: "IS_EDIT", payload: false });
       }}
-      defaultValue="#FFFF"
+      defaultValue="#000000"
       className="modal--container"
       >
       <div
@@ -64,8 +64,9 @@ function ModelNote() {
                   className='input-field-area'
                 />
           <div className='title-container'>Description</div>
-          <div className='ritcheditor-container'><RichTextEditor  textAreaValue={textareaValue}/></div>
-          
+          <div>
+                <RichTextEditor textAreaValue={textareaValue} />
+              </div>         
           <div className='lable-flow-flex'>
                     <input
             type="radio"
@@ -144,7 +145,7 @@ function ModelNote() {
             <p className="label">Low</p>
             </div>
                   <div className='model-btn-addnote'>
-                     <span className="color-picker-icon">
+                    <span className="color-picker-icon">
                 <MdOutlineColorLens />
               </span>
 
