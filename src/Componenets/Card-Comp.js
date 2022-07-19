@@ -14,14 +14,7 @@ function CardComp({ note }) {
     noteCreatedDate,
     isEdit,
   } = note;
-  let { noteDispatch, adddToArchive, addToNotes, adddToTrash, pinnedNotes, deleteFromTrash } = useNoteContext();
-
-  console.log("pinned",pinnedNotes)
-  console.log("all", addToNotes)
-
-  console.log("pinnedNOtesafterdelete", pinnedNotes)
-  
-
+  let { noteDispatch, adddToArchive, addToNotes, adddToTrash,  deleteFromTrash } = useNoteContext();
   function priorityColor(priority) {
     switch (priority) {
       case "urgent":
@@ -51,10 +44,10 @@ return (
                 <div>lable</div>
                 <div>lable</div>
                 <div className='section-4'>
-                     <p className="note-card-created">created on {noteCreatedDate}</p>
+                    <p className="note-card-created">created on {noteCreatedDate}</p>
                     <div>time</div>
                     <div><BiEdit
-                     onClick={() => {
+                    onClick={() => {
                 noteDispatch({ type: "IS_EDIT", payload: true });
                 noteDispatch({ type: "NOTE_MODAL", payload: true });
                 noteDispatch({

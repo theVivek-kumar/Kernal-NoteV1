@@ -5,6 +5,8 @@ import { v4 as uuid } from "uuid";
 
 const NoteContext = createContext();
 const useNoteContext = () => useContext(NoteContext);
+localStorage.setItem("token", 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIwZjYyM2ZlZS0yMjc0LTRhNjAtYTFlMS0wZWJjNzM0NGRlZDUiLCJlbWFpbCI6ImFkYXJzaHBhdGVsQGdtYWlsLmNvbSJ9.76eyQcWZEIs09KeEv3m05DtsQB3pbFpUsZfLoQQ-gMs');
+
 
 
 function NotesProvider({ children }) {
@@ -78,6 +80,68 @@ function NotesProvider({ children }) {
         return state;
     }
   }
+           //case "PINNED_NOTES":
+  //       return { ...state, pinnedNotes: action.payload };
+  //       // return { ...state, pinnedNotes: [...state.pinnedNotes,action.payload] };
+  //     case "TITLE":
+  //       return { ...state, title: action.payload };
+  //     case "PRIORITY":
+  //       return { ...state, priority: action.payload };
+  //     case "LABEL":
+  //       return { ...state, label: action.payload };
+
+  //     case "TEXTAREA":
+  //       return { ...state, textareaValue: action.payload };
+  //     case "ADD_TO_NOTES":
+  //       return { ...state, addToNotes: action.payload };
+  //     case "IS_EDIT":
+  //       return { ...state, isEdit: action.payload };
+        
+  //     case "EDIT_NOTE":
+  //       return { ...state, ...action.payload };
+        
+
+  //     case "GET_ARCHIVE_NOTES":
+  //       return { ...state, archiveNotes: action.payload };
+  //     case "ADD_TO_ARCHIVE":
+  //       return { ...state, archiveNotes: action.payload };
+  //     case "RESTORE_FROM_ARCHIVE":
+  //       return { ...state, archiveNotes: action.payload };
+  //     case "DELETE_FROM_ARCHIVE":
+  //       return { ...state, archiveNotes: action.payload };
+
+  //     case "GET_TRASH_NOTES":
+  //       return { ...state, trashNotes: action.payload };
+  //     case "ADD_TO_TRASH":
+  //       return { ...state, trashNotes: action.payload };
+  //     case "RESTORE_FROM_TRASH":
+  //       return { ...state, trashNotes: action.payload };
+  //     case "DELETE_FROM_TRASH":
+  //       return { ...state, trashNotes: action.payload };
+
+  //     case "NOTES_BG_COLOR":
+  //       return { ...state, notesBgColor: action.payload };
+  //     case "NOTE_MODAL":
+  //       return { ...state, noteModal: action.payload };
+  //     case "NOTE_CREATED_DATE":
+  //       return { ...state, noteCreatedDate: action.payload };
+  //     case "CLEAR_INPUT":
+  //       return {
+  //         ...state,
+  //         _id:null,
+  //         title: "",
+  //         textareaValue: "",
+  //         priority: "",
+  //         label: "",
+  //         notesBgColor: "#F1F3F4",
+  //       };
+
+  //     case "SEARCH":
+  //       return {...state, searchValue:action.payload}  
+  //     default:
+  //       return state;
+  //   }
+  // }
   const noteCreatedDate = new Date().toLocaleString();
 
   const [noteState, noteDispatch] = useReducer(noteReducer, {
@@ -90,10 +154,8 @@ function NotesProvider({ children }) {
     title: "",
     priority: "",
     label: "",
-
     labelInput:"",
     labelArray:"",
-
     textareaValue: "",
     notesBgColor: "#ffffff",
     noteModal: false,
@@ -101,6 +163,7 @@ function NotesProvider({ children }) {
     editNote:{},
     searchValue:"",
   });
+  console.log("this is from note state",noteState )
 
   const {
     addToNotes,
@@ -108,7 +171,7 @@ function NotesProvider({ children }) {
     priority,
     label,
     labelInput,
-    labelArray,
+    //labelArray,
     textareaValue,
     notesBgColor,
     noteModal,
@@ -137,27 +200,32 @@ function NotesProvider({ children }) {
       title,
       priority,
       label,
-      labelArray,
+      //labelArray,
       textareaValue,
       notesBgColor,
       noteCreatedDate,
     };
-  console.log("from context",labelArray)
+   
     try {
+      
+      console.log(localStorage.getItem("token") )
+      console.log("from context")
       const response = await axios({
         method: "POST",
         url: "/api/notes/",
         headers: { authorization: localStorage.getItem("token") },
         data: { note },
       });
-      if (response.status === 201) {
+      if (true) {
+        console.log("from context ffgvfgv",labelArray)
         noteDispatch({ type: "ADD_TO_NOTES", payload: response.data.notes });
+        console.log(response.data.notes)
         noteDispatch({ type: "CLEAR_INPUT" });
         noteDispatch({ type: "NOTE_MODAL", payload: false });
-        Toast({ type: "success", msg: "Note added successfully" });
+       //Toast({ type: "success", msg: "Note added successfully" });
       }
     } catch (error) {
-      Toast({ type: "error", msg: error });
+      //Toast({ type: "error", msg: error });
     }
   }
 
@@ -354,7 +422,7 @@ async function deleteFromTrash (_id, noteDispatch){
         noteState,
         priority,
         label,
-        labelArray,
+        //labelArray,
         textareaValue,
         addNote,
         notesBgColor,

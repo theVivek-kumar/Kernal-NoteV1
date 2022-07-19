@@ -9,7 +9,8 @@ function LogIn() {
 const navigate = useNavigate();
 const location = useLocation();
 
-const encodedToken = localStorage.getItem("token");
+    
+    
 const {
     authState: { email, password },
     authDispatch,

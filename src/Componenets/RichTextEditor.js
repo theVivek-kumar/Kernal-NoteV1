@@ -45,4 +45,4 @@ const RichTextEditor = () => {
     );
 };
 
-export default RichTextEditor;
+export { RichTextEditor };
