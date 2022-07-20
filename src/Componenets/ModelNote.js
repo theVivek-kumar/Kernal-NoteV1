@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai';
-import {MdClose,MdOutlineColorLens} from "react-icons/md";
-import RichTextEditor from './RichTextEditor';
+import {MdOutlineColorLens} from "react-icons/md";
+import {RichTextEditor} from './RichTextEditor';
 import { useNoteContext } from '../Context/NoteContext';
 
 
@@ -25,11 +25,11 @@ function ModelNote() {
       <div
         style={{ display: noteModal ? "block" : "none" }}
       onClick={() => {
-        noteDispatch({ type: "NOTE_MODAL", payload: false });
-        noteDispatch({ type: "CLEAR_INPUT" });
+        //noteDispatch({ type: "NOTE_MODAL", payload: false });
+       // noteDispatch({ type: "CLEAR_INPUT" });
         noteDispatch({ type: "IS_EDIT", payload: false });
       }}
-      defaultValue="#FFFF"
+      defaultValue="#000000"
       className="modal--container"
       >
       <div
@@ -64,11 +64,12 @@ function ModelNote() {
                   className='input-field-area'
                 />
           <div className='title-container'>Description</div>
-          <div className='ritcheditor-container'><RichTextEditor  textAreaValue={textareaValue}/></div>
-          
+          <div>
+                <RichTextEditor textAreaValue={textareaValue} />
+              </div>         
           <div className='lable-flow-flex'>
                     <input
-            type="radio"
+                      type="radio"
                       name="label"
                       required
                       className=""
@@ -143,8 +144,8 @@ function ModelNote() {
                       }          />
             <p className="label">Low</p>
             </div>
-                  <div className='model-btn-addnote'>
-                     <span className="color-picker-icon">
+                  {/* <div className='model-btn-addnote'>
+                    <span className="color-picker-icon">
                 <MdOutlineColorLens />
               </span>
 
@@ -155,10 +156,33 @@ function ModelNote() {
                 className="submit-btn"
               />
             <button className='btn-add'>ADD NOTE</button>
-            </div>
+            </div> */}
           
-
-              
+                <span className="color-pallete">
+                <label htmlFor="create-color">
+                  <input
+                    type="color"
+                    className="input-color"
+                    id="create-color"
+                    value={notesBgColor}
+                    onChange={(e) =>
+                      noteDispatch({
+                        type: "NOTES_BG_COLOR",
+                        payload: e.target.value,
+                      })
+                    }
+                  />
+                </label>
+              </span>
+              <span className="color-picker-icon">
+                <MdOutlineColorLens />
+              </span>
+              <input
+                type="submit"
+                value={isEdit ? "Update" : "Add Note"}
+                style={{ position: "absolute", bottom: "1rem", right: "1rem" }}
+                className="submit-btn"
+              />
           </div>
         </div>
         </div>

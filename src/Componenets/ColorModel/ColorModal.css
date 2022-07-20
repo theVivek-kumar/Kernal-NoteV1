@@ -1,0 +1,19 @@
+.color-palette{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: transparent;
+    background-color: aqua;
+}
+
+.color-modal{
+    height: auto;
+    width: 7rem;
+}
+
+.flex-start-color{
+   
+        gap: 0.5rem;
+        flex-wrap: wrap;
+  
+}

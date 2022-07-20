@@ -33,7 +33,9 @@ export const getAllNotesHandler = function (schema, request) {
  * */
 
 export const createNoteHandler = function (schema, request) {
+  console.log("reached api")
   const user = requiresAuth.call(this, request);
+  console.log(user)
   try {
     if (!user) {
       return new Response(
@@ -45,6 +47,7 @@ export const createNoteHandler = function (schema, request) {
       );
     }
     const { note } = JSON.parse(request.requestBody);
+    console.log(JSON.parse(request.requestBody))
     if (!note.tags) {
       user.notes.push({ ...note, _id: uuid(), tags: [] });
     } else {

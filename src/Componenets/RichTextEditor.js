@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
+import { useNoteContext } from '../Context/NoteContext';
 
-const RichTextEditor = () => {
-
-    const [show, setShow] = useState('')
+const RichTextEditor = ({textAreaValue}) => {
+ const { noteState, noteDispatch } = useNoteContext();
+    //const { textAreaValue } = noteState;
+   
 
     return (
         <>
@@ -18,31 +20,28 @@ const RichTextEditor = () => {
                                 flexDirection: 'column'
                             }}
 
-                            value={show}
-
+                            value={ textAreaValue || '' } 
+                    
                             modules={{
                                 toolbar: [
-                                    [{ 'header': '1'}, {'header': '2'}, { 'font': [] }], [{size: []}],
                                     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
                                     [{'align': []}],
                                     [{ 'color': [] }, { 'background': [] }],
-                                    [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
-                                    ['link', "video","image", "code-block"],
+                                    [{ 'list': 'ordered' }, { 'list': 'bullet' },  { 'indent': '+1' }],
+                                    ['link', "video","image"],
                                     ['clean']
                                 ],
                             }}
-                            formats={[
-                                'header', 'font', 'size',
-                                'bold', 'italic', 'underline', 'strike', 'blockquote', 'color', 'background',
-                                'list', 'bullet', 'indent', 'link', 'video', 'image', "code-block", "align"
-                            ]}
-                            onChange={(val) => {
-                                setShow(val)
-                            }}
-                />
+                        
+                            onChange={(event) => noteDispatch({
+        type: "TEXTAREA",
+           payload: event ,
+       })
+       }    
+        />
           </div>
         </>
     );
 };
 
-export default RichTextEditor;
+export { RichTextEditor };
