@@ -120,23 +120,148 @@ font-weight: 500;
 
 }
 /*card--css*/
-.section-1{
-  display: flex;
-  justify-content: space-between;
-}
-.section-4{
-  display: flex;
-  justify-content: space-between;
-}
+
 .main-card-containr{
   width: 40%;
-  display: flex;
-  height: auto;
+  padding: 1.5rem;
+  height: 20rem;
   box-shadow:0px 0px 15px var(--Box-shadow);
   background-color: rgb(255, 255, 255);
+  margin: 3rem;
+  border-radius: 5px;
 }
-.card-container{
-  width: 95%;
+.title-style{
+  display: flex;
+  justify-content: space-between;
+}
+.lable-card-item{
+  width: 8rem;
   height: auto;
-  margin: .4rem;
+  margin-top: 1rem;
+  color: var(--Blue-clr);
+  border-radius: 5px;
+  border: none;
+  font-size: 1.5rem;
+}
+.priority-card-item{
+  width: 8rem;
+  height: auto; 
+  margin: 1rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.5rem;
+}
+.note-card-body{
+  width: 100%;
+  padding: 1rem;
+  border:1px soldid black ;
+  min-height:4rem ;
+  max-height: auto;
+  background-color: rgb(229, 229, 229);
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.date-section{
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card-icon-section{
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.Container-class{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/*home-page*/
+a, a:hover, a:focus, a:active{
+  text-decoration: none;
+  color: inherit;
+}
+
+.flex-col-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-row-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gap-1rem-start {
+    gap: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+li{
+  list-style: none;
+  cursor:pointer;
+}
+
+.main-section{
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+}
+
+.main-content {
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+}
+.search-bar-flex-style{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.notecard-conatiner {
+  height: 100vh;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+}
+
+.empty-notes-container{
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+}
+
+.empty-notes-heading{
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.empty-notes-img{
+  aspect-ratio: 1/1;
+  width: 20rem;
+  height: 20rem;
+}
+
+.empty-notes-img img{
+  width: 90%;
+  height: auto;
+}
+.style1{
+  width: 10rem;
+  height: auto;
+
 }

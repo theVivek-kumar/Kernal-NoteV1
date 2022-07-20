@@ -5,7 +5,8 @@ import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { makeServer } from "./server";
 import { AuthProvider } from "./Context/AuthContext";
-import {  NotesProvider } from "./Context/NoteContext";
+import { NotesProvider } from "./Context/NoteContext";
+import {FilterProvider} from "./Context/FilterContext"
 
 // Call make Server
 makeServer();
@@ -13,11 +14,13 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      < FilterProvider>
       <NotesProvider>
       <AuthProvider>
         <App />
         </AuthProvider>
-      </NotesProvider>
+        </NotesProvider>
+      </FilterProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

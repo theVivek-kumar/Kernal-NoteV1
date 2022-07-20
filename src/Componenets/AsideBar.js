@@ -4,63 +4,51 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { List,Stack, ListItem, Box,Button,Container, ListItemButton, ListItemText ,Divider } from '@mui/material'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import SearchAppBar from './Search';
 import ModelNote from '.././Componenets/ModelNote'
 import { useNoteContext } from '../Context/NoteContext';
+import NavBar from './Navbar';
 const AsideBar = () => {
    const { noteDispatch, labelArray } = useNoteContext();
     return ( <Container  >
           <Stack display='block' spacing={4}>
        
             
-    <Box sx={{ width: '100%', maxWidth: 180, bgcolor: 'background.paper'  }}>
+    <Box sx={{ width: '20%', maxWidth: 180, bgcolor: 'background.paper'  }}>
           <nav aria-label="main mailbox folders">
             
               <List >
-          <ListItem disablePadding>
-            <ListItemButton>
+          <NavLink to="/HomePage" className={({ isActive }) => !isActive ? "not-active" : "is-active"}><ListItem disablePadding>
+          <ListItemButton>
               <ListItemIcon>
-                <HomeOutlinedIcon />
+                    <HomeOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Home" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <LabelOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText primary="Lables" />
-            </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
+                </ListItemButton>
+                
+          </ListItem></NavLink>
+              <NavLink to='/ArchivePage' className={({ isActive }) => !isActive ? "not-active" : "is-active"}> <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 <Inventory2OutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Archive" />
             </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
+              </ListItem>
+              </NavLink>
+              <NavLink to='/TrashPage' className={({ isActive }) => !isActive ? "not-active" : "is-active"}><ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 <DeleteOutlineOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary="Trash" />
             </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <AccountCircleOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText primary="Profile" />
-            </ListItemButton>
-          </ListItem>
+              </ListItem>
+              </NavLink>
+                  
         </List>
       </nav>
           {/* <Divider /> */}
@@ -70,7 +58,7 @@ const AsideBar = () => {
             
       </Stack>
       <ModelNote/>
-      <SearchAppBar/>
+      {/* <SearchAppBar/> */}
     </Container>
   )
 }
